@@ -5,13 +5,13 @@ import pytest
 import subprocess
 
 
-def pytest_collect_file(parent, path):
+def pytest_collect_file(parent, file_path):
     # TODO: get UNITY_TEST_PREFIX and UNITY_RUNNER_SUFFIX from wscript
     # or from a shared unity config file
-    if ((path.ext == ".c" or path.ext == ".xc")
-            and (path.basename.startswith("test_")
-                 and "_Runner" not in path.basename)):
-        return UnityTestSource.from_parent(parent, fspath=path)
+    if ((file_path.suffix == ".c" or file_path.suffix == ".xc")
+            and (file_path.stem.startswith("test_")
+                 and "_Runner" not in file_path.stem)):
+        return UnityTestSource.from_parent(parent, path=file_path)
 
 
 class UnityTestSource(pytest.File):
