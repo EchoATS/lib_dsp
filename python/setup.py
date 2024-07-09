@@ -1,4 +1,4 @@
-# Copyright 2020-2024 XMOS LIMITED.
+# Copyright 2020-2021 XMOS LIMITED.
 # This Software is subject to the terms of the XMOS Public Licence: Version 1.
 import setuptools
 
@@ -13,7 +13,7 @@ setuptools.setup(
     name='lib_dsp',
     packages=setuptools.find_packages(),
     install_requires=[
-        "flake8~=7.0",
+        "flake8~=3.8",
         "matplotlib~=3.3",
         "numpy~=1.18",
         "pylint~=2.5",

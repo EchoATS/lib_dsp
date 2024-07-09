@@ -14,7 +14,7 @@ pipeline {
   stages {
     stage('Standard build and XS2 tests') {
       agent {
-        label 'x86_64&&linux'
+        label 'x86_64&&macOS'
       }
       stages {
         stage('Get view') {
